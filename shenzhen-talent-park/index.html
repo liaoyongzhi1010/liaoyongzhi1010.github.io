@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#163c34" />
+  <meta name="description" content="以春笋为中心的深圳人才公园与后海建筑群交互式三维白模" />
+  <title>深圳人才公园 · 春笋城市白模</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <main id="scene">
+    <div id="canvas"></div>
+    <div id="loading"><div class="logo">春</div><b>正在生成后海城市白模</b><span>载入真实建筑轮廓与道路数据…</span></div>
+    <header class="topbar">
+      <div class="brand">春</div><div class="brand-copy"><b>深圳人才公园 · 城市白模</b><span>Shenzhen Talent Park / Digital Massing</span></div>
+      <div class="stats"><label><b id="count">…</b> 栋建筑</label><label><b>4.1 km²</b> 建模范围</label><label><b>1:1</b> 空间尺度</label></div>
+      <div class="grow"></div><span class="data"><i></i> OSM · 2026.07</span><button id="light" title="切换光影">◐</button><button id="full" title="全屏查看">⛶</button>
+    </header>
+    <section class="intro glass"><small>HOUHAI URBAN LAB</small><h1>人才公园<br><em>春笋城市样本</em></h1><p>以真实地理轮廓构建的交互式白模。拖动旋转，滚轮缩放，点击任意建筑查看体量信息。</p><div class="facts"><label><b>392.5m</b>春笋建筑高度</label><label><b>77ha</b>人才公园面积</label></div></section>
+    <aside class="layers glass"><small>LAYER <b>04</b></small><button data-layer="buildings" class="on"><span>▥</span>建筑白模<i></i></button><button data-layer="landscape" class="on"><span>♣</span>公园景观<i></i></button><button data-layer="water" class="on"><span>≈</span>湖泊水系<i></i></button><button data-layer="roads" class="on"><span>⌁</span>道路路网<i></i></button></aside>
+    <section class="selected glass"><div></div><small>SELECTED BUILDING</small><b id="name">中国华润大厦 · 春笋</b><span id="height">392.5 m</span><footer><label id="levels">68 层</label><label>⌖ 后海片区</label><label>↔ 1:1</label></footer></section>
+    <nav class="views glass"><button data-view="bird" class="on">◫ <span>城市鸟瞰</span></button><button data-view="lake">≈ <span>湖岸视角</span></button><button data-view="tower">◎ <span>春笋近景</span></button><button data-view="plan">⌑ <span>总图模式</span></button></nav>
+    <div class="north">N</div><div id="spring-label" class="map-label main">中国华润大厦 · 春笋</div><div id="park-label" class="map-label">深圳人才公园</div><div id="tip"></div>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
